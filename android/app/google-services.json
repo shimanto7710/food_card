@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "348405045281",
+    "project_id": "foodcard-982dc",
+    "storage_bucket": "foodcard-982dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348405045281:android:2c10a033dcfdb330d46b60",
+        "android_client_info": {
+          "package_name": "com.rookie.food_card"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348405045281-8rangks2a2d6dlfk2tk6v0lf61fje96t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHRdN1VnZJFV49gQSpC9dEZEQ3RoCpCAs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348405045281-8rangks2a2d6dlfk2tk6v0lf61fje96t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
