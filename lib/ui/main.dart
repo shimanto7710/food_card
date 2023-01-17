@@ -5,6 +5,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 import '../routes/app_pages.dart';
 import '../routes/routes.dart';
+import 'home/views/example.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,9 +25,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.splash,
+      // initialRoute: Routes.splash,
       getPages: AppPages.appRoutes(),
-      // home: const SplashView(),
+      home: HomeView(),
     );
   }
 }
