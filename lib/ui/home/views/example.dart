@@ -1,3 +1,4 @@
+/*
 
 import 'dart:io';
 
@@ -8,12 +9,14 @@ import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 import '../controllers/home_controller.dart';
 
+*/
 /*class QRViewExample extends StatefulWidget {
   const QRViewExample({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _QRViewExampleState();
-}*/
+}*//*
+
 
 class HomeView extends GetView<HomeController> {
 
@@ -171,3 +174,4 @@ class HomeView extends GetView<HomeController> {
     super.dispose();
   }
 }
+*/

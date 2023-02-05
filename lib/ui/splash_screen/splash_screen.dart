@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:food_card/routes/routes.dart';
 import 'package:get/get.dart';
 import '../../constant.dart';
+import '../../routes/app_pages.dart';
 import '../../styles/colors.dart';
 
 class SplashView extends StatefulWidget {
@@ -17,7 +17,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     Future.delayed(const Duration(milliseconds: 1000), () {
-      Get.toNamed(Routes.home);
+      Get.toNamed(Routes.HOME);
     });
     super.initState();
   }

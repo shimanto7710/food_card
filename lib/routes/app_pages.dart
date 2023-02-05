@@ -1,24 +1,25 @@
-import 'package:food_card/routes/routes.dart';
-import 'package:food_card/ui/splash_screen/splash_screen.dart';
 import 'package:get/get.dart';
 
-import '../ui/home/bindings/home_binding.dart';
-import '../ui/home/views/home_view.dart';
+import '../app/modules/home/bindings/home_binding.dart';
+import '../app/modules/home/views/home_view.dart';
+import '../ui/splash_screen/splash_screen.dart';
+
+part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.splash;
+  static const INITIAL = Routes.INITIAL;
 
-  static appRoutes() => [
+  static final routes = [
     GetPage(
-      name: Routes.home,
-      page: () => const HomeView(),
-      binding: HomeBinding(),
+      name: _Paths.SPLASH,
+      page: () => const SplashView(),
     ),
     GetPage(
-      name: Routes.splash,
-      page: () => const SplashView()
+      name: _Paths.HOME,
+      page: () => HomeView(),
+      binding: HomeBinding(),
     ),
   ];
 }

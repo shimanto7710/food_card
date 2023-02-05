@@ -1,43 +1,36 @@
 name: food_card
-description: A new Flutter project.
-
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
 version: 1.0.0+1
-
-environment:
+publish_to: none
+description: A new Flutter project.
+environment: 
   sdk: '>=2.18.6 <3.0.0'
 
-dependencies:
-  flutter:
-    sdk: flutter
-
+dependencies: 
   cupertino_icons: ^1.0.2
   firebase_core: ^2.4.1
   firebase_database: ^10.0.9
   qr_code_scanner: ^1.0.1
-  get: ^4.6.3
-
-dev_dependencies:
-  flutter_test:
+  get: 4.6.5
+  flutter: 
     sdk: flutter
 
+dev_dependencies: 
   flutter_lints: ^2.0.0
+  flutter_test: 
+    sdk: flutter
 
-flutter:
-
-  uses-material-design: true
-
-  assets:
+flutter: 
+  assets: 
     - assets/wecon.png
-
-  fonts:
+  fonts: 
     - family: Questrial
-      fonts:
+      fonts: 
         - asset: fonts/Questrial-Regular.ttf
     - family: Poppins
-      fonts:
+      fonts: 
         - asset: fonts/Poppins-Regular.ttf
     - family: Quantico
-      fonts:
+      fonts: 
         - asset: fonts/Quantico-Regular.otf
+  uses-material-design: true
+

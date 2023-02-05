@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:food_card/ui/splash_screen/splash_screen.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
+import '../app/modules/home/views/home_view.dart';
 import '../routes/app_pages.dart';
-import '../routes/routes.dart';
 import 'home/views/example.dart';
 
 Future<void> main() async{
@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      // initialRoute: Routes.splash,
-      getPages: AppPages.appRoutes(),
+      initialRoute: Routes.INITIAL,
+      getPages: AppPages.routes,
       home: HomeView(),
     );
   }
