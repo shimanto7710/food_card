@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SGColors {
-  SGColors._();
+class AppColors {
+  AppColors._();
 
   static const Color red = Color(0xffff3029);
   static const Color pinkyRed = Color(0xffff1f4e);

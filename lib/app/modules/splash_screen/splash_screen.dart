@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../constant.dart';
+import '../../utls/constant.dart';
 import '../../routes/app_pages.dart';
-import '../../styles/colors.dart';
+import '../../styles/app_colors.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -25,7 +25,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: SGColors.white,
+      backgroundColor: AppColors.white,
 
     );
   }

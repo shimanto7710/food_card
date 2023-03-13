@@ -25,12 +25,12 @@ class HomeView extends GetView<HomeController> {
   // In order to get hot reload to work we need to pause the camera if the platform
   // is android, or resume the camera if the platform is iOS.
   @override
-  void reassemble() {
+  /*void reassemble() {
     if (Platform.isAndroid) {
       controller.qrViewController!.pauseCamera();
     }
     controller.qrViewController!.resumeCamera();
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -49,12 +49,15 @@ class HomeView extends GetView<HomeController> {
                     Text(
                         'Barcode Type: ${describeEnum(controller.result!.format)}   Data: ${controller.result!.code}')
                   else
-                    const Text('Scan a code'),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text('Scan a Restaurant QR Code'),
+                    ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Container(
+                      /*Container(
                         margin: const EdgeInsets.all(8),
                         child: ElevatedButton(
                             onPressed: () async {
@@ -67,7 +70,7 @@ class HomeView extends GetView<HomeController> {
                                 return Text('Flash: ${snapshot.data}');
                               },
                             )),
-                      ),
+                      ),*/
                       Container(
                         margin: const EdgeInsets.all(8),
                         child: ElevatedButton(
@@ -89,7 +92,7 @@ class HomeView extends GetView<HomeController> {
                       )
                     ],
                   ),
-                  Row(
+                  /*Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
@@ -114,7 +117,7 @@ class HomeView extends GetView<HomeController> {
                         ),
                       )
                     ],
-                  ),
+                  ),*/
                 ],
               ),
             ),
@@ -147,6 +150,7 @@ class HomeView extends GetView<HomeController> {
 
   void _onQRViewCreated(QRViewController controllerr) {
     controller.qrViewController=controllerr;
+    controller.qrViewController!.resumeCamera();
     controllerr.scannedDataStream.listen((scanData) {
       controller.result = scanData;
     });
@@ -163,6 +167,5 @@ class HomeView extends GetView<HomeController> {
   @override
   void dispose() {
     controller.qrViewController?.dispose();
-
   }
 }

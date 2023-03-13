@@ -1,8 +1,9 @@
 import 'package:get/get.dart';
 
-import '../app/modules/home/bindings/home_binding.dart';
-import '../app/modules/home/views/home_view.dart';
-import '../ui/splash_screen/splash_screen.dart';
+import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/views/home_view.dart';
+import '../modules/splash_screen/splash_screen.dart';
+
 
 part 'app_routes.dart';
 
