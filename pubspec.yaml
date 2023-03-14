@@ -19,9 +19,10 @@ dev_dependencies:
   flutter_test: 
     sdk: flutter
 
-flutter: 
-  assets: 
-    - assets/wecon.png
+flutter:
+  assets:
+    - assets/images/
+    - assets/icons/
   fonts: 
     - family: Questrial
       fonts: 
