@@ -16,59 +16,125 @@ class MenuSingleGridItemWidget extends StatelessWidget {
     return Card(
       elevation: 0,
       color: AppColors.white,
-      shape: RoundedRectangleBorder(
+      /*shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
-      ),
-      child: MaterialButton(
-          onPressed: () {
-            /*controller.navigateToDetailPage(
-              controller, controller.regionList[index].region);*/
-          },
-          child: Stack(
-            children: [
-              Column(
-                children: [
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  ClipRRect(
+      ),*/
+      child: Stack(
+        children: [
+          Card(
+            elevation: .2,
+            color: AppColors.bg,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(10),
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10)),
+              // side: BorderSide(color: Colors.grey, width: 2.0),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(left: 10, right: 10),
+                  height: 150,
+                  child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.network(
                         fit: BoxFit.cover,
-                        "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0004_black_low_cloud.png"),
+                        "https://hub.sensor.buzz/upg-files/api/v1/file-serve/f40b36a5-5cea-460f-afbd-ccf682993653.jpg"),
                   ),
-                  const Spacer(),
-                  const Expanded(
-                      child: Text(
-                    "asdasdasd",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  )),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "20 min",
-                        style: TextStyle(color: AppColors.grey),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text(
+                  "Avocada Salad",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    Text(
+                      "20 min",
+                      style: TextStyle(color: AppColors.grey),
+                    ),
+                    const Spacer(),
+                    const Icon(
+                      Icons.favorite,
+                      color: AppColors.yellow,
+                    ),
+                    const SizedBox(
+                      width: 2,
+                    ),
+                    Text("4.5", style: TextStyle(color: AppColors.grey)),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children:  const [
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Text(
+                      "\u09F3 200 (x2)",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    /*Container(
+                      margin: const EdgeInsets.only(bottom: 5),
+                      child: const Text(
+                        "(x2)",
+                        style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppColors.appGreen),
                       ),
-                      const Spacer(),
-                      const Icon(
-                        Icons.favorite,
-                        color: AppColors.yellow,
-                      ),
-                      const SizedBox(width: 2,),
-                      Text("4.5", style: TextStyle(color: AppColors.grey)),
-                      const SizedBox(width: 10,),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                ],
-              )
-            ],
-          )),
+                    ),*/
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            right: 0,
+            child: Card(
+              elevation: 0,
+              color: AppColors.green,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(20),
+                    topLeft: Radius.circular(20)),
+              ),
+              child: Container(
+                padding: const EdgeInsets.all(10),
+                child: const Icon(
+                  Icons.add,
+                  color: AppColors.white,
+                ),
+              ),
+            ),
+          ),
+          /*const Positioned(bottom: 0, right: 0,child: Padding(
+            padding: EdgeInsets.only(right: 60, bottom: 10),
+            child: Text("2", style: TextStyle(color: AppColors.appGreen,fontSize: 20),),
+          ),)*/
+        ],
+      ),
     );
   }
 }
