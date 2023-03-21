@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_card/app/modules/menu/controllers/menu_controller.dart';
+import 'package:food_card/app/utls/constant.dart';
 
+import '../../../data/restarant_model/menu_model/menu_model.dart';
 import '../../../styles/app_colors.dart';
 import '../../../styles/app_spacing.dart';
 
@@ -46,15 +48,18 @@ class MenuSingleGridItemWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     child: Image.network(
                         fit: BoxFit.cover,
-                        "https://hub.sensor.buzz/upg-files/api/v1/file-serve/f40b36a5-5cea-460f-afbd-ccf682993653.jpg"),
+                        controller.menuList![index].image ??
+                            Constant.dummyImage),
                   ),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                const Text(
-                  "Avocada Salad",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                Text(
+                  controller.menuList![index].name ??
+                      "None",
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
                   height: 10,
@@ -65,18 +70,22 @@ class MenuSingleGridItemWidget extends StatelessWidget {
                       width: 15,
                     ),
                     Text(
-                      "20 min",
+                      "${controller.menuList![index]
+                          .time} min",
                       style: TextStyle(color: AppColors.grey),
                     ),
                     const Spacer(),
                     const Icon(
-                      Icons.favorite,
+                      Icons.star,
                       color: AppColors.yellow,
                     ),
                     const SizedBox(
                       width: 2,
                     ),
-                    Text("4.5", style: TextStyle(color: AppColors.grey)),
+                    Text(
+                        controller.menuList![index].rating
+                            .toString(),
+                        style: TextStyle(color: AppColors.grey)),
                     const SizedBox(
                       width: 15,
                     ),
@@ -87,23 +96,21 @@ class MenuSingleGridItemWidget extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children:  const [
-                    SizedBox(
+                  children: [
+                    const SizedBox(
                       width: 15,
                     ),
                     Text(
-                      "\u09F3 200 (x2)",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      controller.menuList![index]
+                          .orderedQuantity !=
+                          0
+                          ? "\u09F3 ${controller.menuList![index].price} (x${controller
+                          .menuList![index]
+                          .orderedQuantity})"
+                          : "\u09F3 ${controller.menuList![index].price}",
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold),
                     ),
-                    /*Container(
-                      margin: const EdgeInsets.only(bottom: 5),
-                      child: const Text(
-                        "(x2)",
-                        style:
-                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppColors.appGreen),
-                      ),
-                    ),*/
                   ],
                 ),
               ],
@@ -112,27 +119,38 @@ class MenuSingleGridItemWidget extends StatelessWidget {
           Positioned(
             bottom: 0,
             right: 0,
-            child: Card(
-              elevation: 0,
-              color: AppColors.green,
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(20),
-                    topLeft: Radius.circular(20)),
-              ),
-              child: Container(
-                padding: const EdgeInsets.all(10),
-                child: const Icon(
-                  Icons.add,
-                  color: AppColors.white,
+            child: GestureDetector(
+              onTap: () {
+                controller.addQuantity(index);
+              },
+              child: Card(
+                elevation: 0,
+                color: AppColors.green,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(20),
+                      topLeft: Radius.circular(20)),
+                ),
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  child: const Icon(
+                    Icons.add,
+                    color: AppColors.white,
+                  ),
                 ),
               ),
             ),
           ),
-          /*const Positioned(bottom: 0, right: 0,child: Padding(
-            padding: EdgeInsets.only(right: 60, bottom: 10),
-            child: Text("2", style: TextStyle(color: AppColors.appGreen,fontSize: 20),),
-          ),)*/
+          const Positioned(
+              top: 0,
+              right: 0,
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Icon(
+                  Icons.favorite_border,
+                  color: AppColors.red,
+                ),
+              )),
         ],
       ),
     );

@@ -4,6 +4,8 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 import 'app/modules/home/views/home_view.dart';
 import 'app/routes/app_pages.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();

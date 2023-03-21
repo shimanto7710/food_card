@@ -62,7 +62,9 @@ class MenuView extends GetView<MenuController> {
                             return MenuSingleGridItemWidget(
                                 key: key, controller: controller, index: index);
                           },
-                          childCount: 20,
+                          childCount: controller
+                                  .menuList?.length ??
+                              0,
                         ),
                       ),
                     ],

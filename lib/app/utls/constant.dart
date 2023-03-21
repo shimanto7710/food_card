@@ -23,6 +23,7 @@ class Constant {
   static const String visibility = "visibility";
   static const String detail_title = "Details Page";
   static const String setAsDefault = "Set As Default";
+  static const String dummyImage = "https://hub.sensor.buzz/upg-files/api/v1/file-serve/f40b36a5-5cea-460f-afbd-ccf682993653.jpg";
 
 
 }
