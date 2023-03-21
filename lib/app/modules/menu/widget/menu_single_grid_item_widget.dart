@@ -48,7 +48,7 @@ class MenuSingleGridItemWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     child: Image.network(
                         fit: BoxFit.cover,
-                        controller.menuList![index].image ??
+                        controller.menuList[index].image ??
                             Constant.dummyImage),
                   ),
                 ),
@@ -56,7 +56,7 @@ class MenuSingleGridItemWidget extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                  controller.menuList![index].name ??
+                  controller.menuList[index].name ??
                       "None",
                   style: const TextStyle(
                       fontSize: 20, fontWeight: FontWeight.bold),
@@ -70,7 +70,7 @@ class MenuSingleGridItemWidget extends StatelessWidget {
                       width: 15,
                     ),
                     Text(
-                      "${controller.menuList![index]
+                      "${controller.menuList[index]
                           .time} min",
                       style: TextStyle(color: AppColors.grey),
                     ),
@@ -83,7 +83,7 @@ class MenuSingleGridItemWidget extends StatelessWidget {
                       width: 2,
                     ),
                     Text(
-                        controller.menuList![index].rating
+                        controller.menuList[index].rating
                             .toString(),
                         style: TextStyle(color: AppColors.grey)),
                     const SizedBox(
@@ -101,13 +101,13 @@ class MenuSingleGridItemWidget extends StatelessWidget {
                       width: 15,
                     ),
                     Text(
-                      controller.menuList![index]
+                      controller.menuList[index]
                           .orderedQuantity !=
                           0
-                          ? "\u09F3 ${controller.menuList![index].price} (x${controller
-                          .menuList![index]
+                          ? "\u09F3 ${controller.menuList[index].price} (x${controller
+                          .menuList[index]
                           .orderedQuantity})"
-                          : "\u09F3 ${controller.menuList![index].price}",
+                          : "\u09F3 ${controller.menuList[index].price}",
                       style: const TextStyle(
                           fontSize: 20, fontWeight: FontWeight.bold),
                     ),

@@ -12,7 +12,7 @@ dependencies:
   qr_code_scanner: ^1.0.1
   dartz: ^0.10.0-nullsafety.2
   get: 4.6.5
-  shared_preferences: ^2.0.17
+#  shared_preferences: ^2.0.17
   dio: ^5.0.1
   flutter: 
     sdk: flutter

@@ -63,8 +63,7 @@ class MenuView extends GetView<MenuController> {
                                 key: key, controller: controller, index: index);
                           },
                           childCount: controller
-                                  .menuList?.length ??
-                              0,
+                                  .menuList.length,
                         ),
                       ),
                     ],
