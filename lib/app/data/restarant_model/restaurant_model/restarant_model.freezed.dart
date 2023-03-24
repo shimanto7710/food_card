@@ -21,24 +21,43 @@ RestaurantModel _$RestaurantModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$RestaurantModel {
   String? get createdAt => throw _privateConstructorUsedError;
+  set createdAt(String? value) => throw _privateConstructorUsedError;
   String? get updatedAt => throw _privateConstructorUsedError;
+  set updatedAt(String? value) => throw _privateConstructorUsedError;
   @Key("is_active")
   bool? get isActive => throw _privateConstructorUsedError;
+  @Key("is_active")
+  set isActive(bool? value) => throw _privateConstructorUsedError;
   String? get id => throw _privateConstructorUsedError;
+  set id(String? value) => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  set name(String? value) => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
+  set email(String? value) => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
+  set password(String? value) => throw _privateConstructorUsedError;
   @Key("phone_number")
   String? get phoneNumber => throw _privateConstructorUsedError;
+  @Key("phone_number")
+  set phoneNumber(String? value) => throw _privateConstructorUsedError;
   String? get image => throw _privateConstructorUsedError;
+  set image(String? value) => throw _privateConstructorUsedError;
   @Key("qr_code")
   String? get qrCode => throw _privateConstructorUsedError;
+  @Key("qr_code")
+  set qrCode(String? value) => throw _privateConstructorUsedError;
   @Key("opening_time")
   String? get openingTime => throw _privateConstructorUsedError;
+  @Key("opening_time")
+  set openingTime(String? value) => throw _privateConstructorUsedError;
   @Key("closing_time")
   String? get closingTime => throw _privateConstructorUsedError;
+  @Key("closing_time")
+  set closingTime(String? value) => throw _privateConstructorUsedError;
   List<MenuModel>? get menuList => throw _privateConstructorUsedError;
+  set menuList(List<MenuModel>? value) => throw _privateConstructorUsedError;
   List<MenuModel>? get orderedList => throw _privateConstructorUsedError;
+  set orderedList(List<MenuModel>? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -259,11 +278,11 @@ class __$$_RestaurantModelCopyWithImpl<$Res>
           : closingTime // ignore: cast_nullable_to_non_nullable
               as String?,
       menuList: freezed == menuList
-          ? _value._menuList
+          ? _value.menuList
           : menuList // ignore: cast_nullable_to_non_nullable
               as List<MenuModel>?,
       orderedList: freezed == orderedList
-          ? _value._orderedList
+          ? _value.orderedList
           : orderedList // ignore: cast_nullable_to_non_nullable
               as List<MenuModel>?,
     ));
@@ -272,10 +291,8 @@ class __$$_RestaurantModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RestaurantModel
-    with DiagnosticableTreeMixin
-    implements _RestaurantModel {
-  const _$_RestaurantModel(
+class _$_RestaurantModel implements _RestaurantModel {
+  _$_RestaurantModel(
       {this.createdAt,
       this.updatedAt,
       @Key("is_active") this.isActive,
@@ -288,136 +305,50 @@ class _$_RestaurantModel
       @Key("qr_code") this.qrCode,
       @Key("opening_time") this.openingTime,
       @Key("closing_time") this.closingTime,
-      final List<MenuModel>? menuList,
-      final List<MenuModel>? orderedList})
-      : _menuList = menuList,
-        _orderedList = orderedList;
+      this.menuList,
+      this.orderedList});
 
   factory _$_RestaurantModel.fromJson(Map<String, dynamic> json) =>
       _$$_RestaurantModelFromJson(json);
 
   @override
-  final String? createdAt;
+  String? createdAt;
   @override
-  final String? updatedAt;
+  String? updatedAt;
   @override
   @Key("is_active")
-  final bool? isActive;
+  bool? isActive;
   @override
-  final String? id;
+  String? id;
   @override
-  final String? name;
+  String? name;
   @override
-  final String? email;
+  String? email;
   @override
-  final String? password;
+  String? password;
   @override
   @Key("phone_number")
-  final String? phoneNumber;
+  String? phoneNumber;
   @override
-  final String? image;
+  String? image;
   @override
   @Key("qr_code")
-  final String? qrCode;
+  String? qrCode;
   @override
   @Key("opening_time")
-  final String? openingTime;
+  String? openingTime;
   @override
   @Key("closing_time")
-  final String? closingTime;
-  final List<MenuModel>? _menuList;
+  String? closingTime;
   @override
-  List<MenuModel>? get menuList {
-    final value = _menuList;
-    if (value == null) return null;
-    if (_menuList is EqualUnmodifiableListView) return _menuList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<MenuModel>? _orderedList;
+  List<MenuModel>? menuList;
   @override
-  List<MenuModel>? get orderedList {
-    final value = _orderedList;
-    if (value == null) return null;
-    if (_orderedList is EqualUnmodifiableListView) return _orderedList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
+  List<MenuModel>? orderedList;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'RestaurantModel(createdAt: $createdAt, updatedAt: $updatedAt, isActive: $isActive, id: $id, name: $name, email: $email, password: $password, phoneNumber: $phoneNumber, image: $image, qrCode: $qrCode, openingTime: $openingTime, closingTime: $closingTime, menuList: $menuList, orderedList: $orderedList)';
   }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RestaurantModel'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt))
-      ..add(DiagnosticsProperty('isActive', isActive))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('email', email))
-      ..add(DiagnosticsProperty('password', password))
-      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
-      ..add(DiagnosticsProperty('image', image))
-      ..add(DiagnosticsProperty('qrCode', qrCode))
-      ..add(DiagnosticsProperty('openingTime', openingTime))
-      ..add(DiagnosticsProperty('closingTime', closingTime))
-      ..add(DiagnosticsProperty('menuList', menuList))
-      ..add(DiagnosticsProperty('orderedList', orderedList));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_RestaurantModel &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt) &&
-            (identical(other.isActive, isActive) ||
-                other.isActive == isActive) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
-            (identical(other.image, image) || other.image == image) &&
-            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
-            (identical(other.openingTime, openingTime) ||
-                other.openingTime == openingTime) &&
-            (identical(other.closingTime, closingTime) ||
-                other.closingTime == closingTime) &&
-            const DeepCollectionEquality().equals(other._menuList, _menuList) &&
-            const DeepCollectionEquality()
-                .equals(other._orderedList, _orderedList));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      createdAt,
-      updatedAt,
-      isActive,
-      id,
-      name,
-      email,
-      password,
-      phoneNumber,
-      image,
-      qrCode,
-      openingTime,
-      closingTime,
-      const DeepCollectionEquality().hash(_menuList),
-      const DeepCollectionEquality().hash(_orderedList));
 
   @JsonKey(ignore: true)
   @override
@@ -434,58 +365,77 @@ class _$_RestaurantModel
 }
 
 abstract class _RestaurantModel implements RestaurantModel {
-  const factory _RestaurantModel(
-      {final String? createdAt,
-      final String? updatedAt,
-      @Key("is_active") final bool? isActive,
-      final String? id,
-      final String? name,
-      final String? email,
-      final String? password,
-      @Key("phone_number") final String? phoneNumber,
-      final String? image,
-      @Key("qr_code") final String? qrCode,
-      @Key("opening_time") final String? openingTime,
-      @Key("closing_time") final String? closingTime,
-      final List<MenuModel>? menuList,
-      final List<MenuModel>? orderedList}) = _$_RestaurantModel;
+  factory _RestaurantModel(
+      {String? createdAt,
+      String? updatedAt,
+      @Key("is_active") bool? isActive,
+      String? id,
+      String? name,
+      String? email,
+      String? password,
+      @Key("phone_number") String? phoneNumber,
+      String? image,
+      @Key("qr_code") String? qrCode,
+      @Key("opening_time") String? openingTime,
+      @Key("closing_time") String? closingTime,
+      List<MenuModel>? menuList,
+      List<MenuModel>? orderedList}) = _$_RestaurantModel;
 
   factory _RestaurantModel.fromJson(Map<String, dynamic> json) =
       _$_RestaurantModel.fromJson;
 
   @override
   String? get createdAt;
+  set createdAt(String? value);
   @override
   String? get updatedAt;
+  set updatedAt(String? value);
   @override
   @Key("is_active")
   bool? get isActive;
+  @Key("is_active")
+  set isActive(bool? value);
   @override
   String? get id;
+  set id(String? value);
   @override
   String? get name;
+  set name(String? value);
   @override
   String? get email;
+  set email(String? value);
   @override
   String? get password;
+  set password(String? value);
   @override
   @Key("phone_number")
   String? get phoneNumber;
+  @Key("phone_number")
+  set phoneNumber(String? value);
   @override
   String? get image;
+  set image(String? value);
   @override
   @Key("qr_code")
   String? get qrCode;
+  @Key("qr_code")
+  set qrCode(String? value);
   @override
   @Key("opening_time")
   String? get openingTime;
+  @Key("opening_time")
+  set openingTime(String? value);
   @override
   @Key("closing_time")
   String? get closingTime;
+  @Key("closing_time")
+  set closingTime(String? value);
   @override
   List<MenuModel>? get menuList;
+  set menuList(List<MenuModel>? value);
   @override
   List<MenuModel>? get orderedList;
+  set orderedList(List<MenuModel>? value);
   @override
   @JsonKey(ignore: true)
   _$$_RestaurantModelCopyWith<_$_RestaurantModel> get copyWith =>

@@ -4,12 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:food_card/app/styles/app_colors.dart';
 
 import 'package:get/get.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import '../../../styles/app_spacing.dart';
 import '../../../utls/constant.dart';
 import '../../../widgets/custom_error.dart';
 import '../controllers/menu_controller.dart';
 import '../widget/menu_single_grid_item_widget.dart';
+import 'bottom_sheet.dart';
+import 'bottom_sheet_wrapper.dart';
 
 class MenuView extends GetView<MenuController> {
   const MenuView({Key? key}) : super(key: key);
@@ -20,6 +23,22 @@ class MenuView extends GetView<MenuController> {
       appBar: AppBar(
         title: const Text('MenuView'),
         centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(
+              Icons.shopping_cart_checkout_rounded,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              showMaterialModalBottomSheet(
+                expand: false,
+                context: context,
+                backgroundColor: Colors.transparent,
+                builder: (context) => BottomSheetWrapper(key: key, child: BottomSheetView(), backgroundColor: Colors.white),
+              );
+            },
+          )
+        ],
       ),
       body: OrientationBuilder(
         builder: (BuildContext context, Orientation orientation) {

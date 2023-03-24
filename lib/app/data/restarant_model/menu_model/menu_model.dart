@@ -5,10 +5,10 @@ part 'menu_model.freezed.dart';
 
 part 'menu_model.g.dart';
 
-@freezed
+@unfreezed
 class MenuModel with _$MenuModel {
 
-  const MenuModel._();
+   // MenuModel._();
 
   factory MenuModel({
     String? createdAt,
@@ -21,7 +21,9 @@ class MenuModel with _$MenuModel {
     String? image,
     @Key("opening_time") String? openingTime,
     @Key("closing_time") String? closingTime,
+    @Key("rating_count") int? ratingCount,
     int? time,
+    String? id,
     double? rating,
     orderedQuantity,
   }) = _MenuModel;

@@ -1,15 +1,22 @@
+/*
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:food_card/app/data/restarant_model/menu_model/menu_model.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../menu_model/menu_model.dart';
+
+
+
+*/
+/*part '../restarant_model.freezed.dart';
+
+part '../restarant_model.g.dart';*//*
 
 part 'restarant_model.freezed.dart';
-
 part 'restarant_model.g.dart';
 
-@freezed
+@unfreezed
 class RestaurantModel with _$RestaurantModel {
-  const factory RestaurantModel({
+  factory RestaurantModel({
     String? createdAt,
     String? updatedAt,
     @Key("is_active") bool? isActive,
@@ -29,3 +36,4 @@ class RestaurantModel with _$RestaurantModel {
   factory RestaurantModel.fromJson(Map<String, dynamic> json) =>
       _$RestaurantModelFromJson(json);
 }
+*/

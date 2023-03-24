@@ -12,6 +12,8 @@ dependencies:
   qr_code_scanner: ^1.0.1
   dartz: ^0.10.0-nullsafety.2
   get: 4.6.5
+  internet_connection_checker: ^1.0.0+1
+  modal_bottom_sheet: ^2.1.2
 #  shared_preferences: ^2.0.17
   dio: ^5.0.1
   flutter: 

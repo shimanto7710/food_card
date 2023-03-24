@@ -141,16 +141,21 @@ class MenuSingleGridItemWidget extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
+          /*Positioned(
               top: 0,
               right: 0,
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Icon(
-                  Icons.favorite_border,
-                  color: AppColors.red,
+              child: GestureDetector(
+                onTap: (){
+                  controller.updateFav(controller.menuList[index], "4.3");
+                },
+                child: const Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Icon(
+                    Icons.favorite_border,
+                    color: AppColors.red,
+                  ),
                 ),
-              )),
+              )),*/
         ],
       ),
     );
