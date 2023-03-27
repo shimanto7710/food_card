@@ -34,7 +34,7 @@ class MenuView extends GetView<MenuController> {
                 expand: false,
                 context: context,
                 backgroundColor: Colors.transparent,
-                builder: (context) => BottomSheetWrapper(key: key, child: BottomSheetView(), backgroundColor: Colors.white),
+                builder: (context) => BottomSheetWrapper(key: key, child: BottomSheetView(key: key, controller: controller), backgroundColor: Colors.white),
               );
             },
           )

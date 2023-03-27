@@ -1,9 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_card/app/modules/menu/views/single_item_list.dart';
 import 'package:food_card/app/styles/app_colors.dart';
 
+import '../controllers/menu_controller.dart';
+
 class BottomSheetView extends StatelessWidget {
-  const BottomSheetView({Key? key}) : super(key: key);
+  const BottomSheetView(
+      {Key? key, required this.controller})
+      : super(key: key);
+
+  final MenuController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -24,19 +31,14 @@ class BottomSheetView extends StatelessWidget {
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
                 return Card(
-                  margin: const EdgeInsets.all(15),
-                  child: Container(
-                    color: Colors.blue[100 * (index % 9 + 1)],
-                    height: 80,
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Item $index",
-                      style: const TextStyle(fontSize: 30),
-                    ),
-                  ),
-                );
+                    margin: const EdgeInsets.all(20),
+                    child: MenuSingleListItemWidget(
+                      key: key,
+                      controller: controller,
+                      index: index,
+                    ));
               },
-              childCount: 1000, // 1000 list items
+              childCount: controller.menuList.length, // 1000 list items
             ),
           )
 
