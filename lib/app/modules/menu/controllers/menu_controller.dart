@@ -13,6 +13,7 @@ class MenuController extends GetxController {
   RxString errorText = "".obs;
   Rx<RestaurantModel> restaurantModel = RestaurantModel().obs;
   RxList<MenuModel> menuList =  <MenuModel>[].obs;
+  RxList<MenuModel> orderedMenuList =  <MenuModel>[].obs;
 
   late MenuServiceInterface service;
 
@@ -97,11 +98,30 @@ class MenuController extends GetxController {
     // var a=menuList;
     // updateRestaurantModel(restaurantModel.value);
   }
-  void subQuantity(int index){
+  void subQuantityOrderedList(int index){
     // restaurantModel.value.menuList![index]=restaurantModel.value.menuList![index].copyWith(orderedQuantity: restaurantModel.value.menuList![index].orderedQuantity!-1);
     // menuList.value[index].orderedQuantity=10;
-    menuList.value[index].orderedQuantity=menuList[index].orderedQuantity-1;
-    menuList.refresh();
+    if(orderedMenuList[index].orderedQuantity-1>-1){
+      orderedMenuList.value[index].orderedQuantity=orderedMenuList[index].orderedQuantity-1;
+      orderedMenuList.refresh();
+    }
+  }
+
+  void addQuantityOrderedList(int index){
+    // restaurantModel.value.menuList![index]=restaurantModel.value.menuList![index].copyWith(orderedQuantity: restaurantModel.value.menuList![index].orderedQuantity!-1);
+    // menuList.value[index].orderedQuantity=10;
+    orderedMenuList.value[index].orderedQuantity=orderedMenuList[index].orderedQuantity+1;
+    orderedMenuList.refresh();
+  }
+
+  void setOrderedList(){
+    for (int i=0;i<menuList.length;i++){
+      List<MenuModel> items=[];
+      if(menuList[i].orderedQuantity>0){
+        items.add(menuList[i]);
+      }
+      orderedMenuList.value=items;
+    }
   }
 
 /*void navigateToDetailPage(HomeController homeController, String region){

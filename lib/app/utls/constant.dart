@@ -25,6 +25,7 @@ class Constant {
   static const String setAsDefault = "Set As Default";
   static const String dummyImage = "https://hub.sensor.buzz/upg-files/api/v1/file-serve/f40b36a5-5cea-460f-afbd-ccf682993653.jpg";
   static const String userId = "1a2cd821-dc6f-4cc4-82de-c22e9e541d4d";
+  static const String taka = "\u09F3";
 
 
 }

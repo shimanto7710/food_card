@@ -29,12 +29,13 @@ class MenuView extends GetView<MenuController> {
               Icons.shopping_cart_checkout_rounded,
               color: Colors.white,
             ),
-            onPressed: () {
+            onPressed: () async{
+              controller.setOrderedList();
               showMaterialModalBottomSheet(
                 expand: false,
                 context: context,
                 backgroundColor: Colors.transparent,
-                builder: (context) => BottomSheetWrapper(key: key, child: BottomSheetView(key: key, controller: controller), backgroundColor: Colors.white),
+                builder: (context) => BottomSheetWrapper(key: key, backgroundColor: Colors.white, child: BottomSheetView(key: key, controller: controller)),
               );
             },
           )
